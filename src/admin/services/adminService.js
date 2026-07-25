@@ -27,6 +27,24 @@ export async function signOutAdmin() {
   if (error) throw error;
 }
 
+export async function sendPasswordResetEmail(email) {
+  const cleanEmail = email.trim();
+  if (!cleanEmail) throw new Error("Ingresá tu correo electrónico.");
+
+  const redirectTo = `${window.location.origin}/admin/reset-password`;
+  const { error } = await supabase.auth.resetPasswordForEmail(cleanEmail, {
+    redirectTo,
+  });
+
+  if (error) throw error;
+}
+
+export async function updateAdminPassword(password) {
+  const { data, error } = await supabase.auth.updateUser({ password });
+  if (error) throw error;
+  return data.user;
+}
+
 export async function getCurrentSession() {
   const {
     data: { session },
@@ -53,8 +71,8 @@ export async function verifyAdminAccess(userId) {
 export function subscribeToAuthChanges(callback) {
   const {
     data: { subscription },
-  } = supabase.auth.onAuthStateChange((_event, session) => {
-    callback(session);
+  } = supabase.auth.onAuthStateChange((event, session) => {
+    callback(session, event);
   });
 
   return () => subscription.unsubscribe();

@@ -2443,3 +2443,60 @@ textarea:focus {
   .admin-inline-category-form { grid-template-columns: 1fr; }
   .admin-stock-field { grid-column: auto; }
 }
+
+/* Recuperación de contraseña del panel */
+.admin-forgot-button {
+  justify-self: center;
+  padding: 0.35rem 0.2rem;
+  border: 0;
+  color: var(--wine);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.admin-forgot-button:hover {
+  opacity: 0.78;
+}
+
+.admin-recovery-copy h1 {
+  font-size: clamp(2.35rem, 7vw, 3.9rem);
+}
+
+.admin-reset-checking {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 22px 0 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.admin-reset-checking .admin-spinner {
+  width: 34px;
+  height: 34px;
+}
+
+.admin-password-toggle {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: center;
+  gap: 10px !important;
+  cursor: pointer;
+}
+
+.admin-password-toggle input {
+  width: 18px !important;
+  min-height: 18px !important;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--wine);
+}
+
+.admin-password-toggle span {
+  font-size: 0.8rem !important;
+}
