@@ -32,6 +32,17 @@ export default function Header() {
 
         <div className="header-actions">
           <button
+            className="cart-button"
+            type="button"
+            onClick={() => setIsCartOpen(true)}
+            aria-label={`Abrir carrito con ${totals.count} productos`}
+          >
+            <span className="cart-icon" aria-hidden="true">🛒</span>
+            <span className="cart-label">Carrito</span>
+            <strong>{totals.count}</strong>
+          </button>
+
+          <button
             className="menu-button"
             type="button"
             aria-label="Abrir menú"
@@ -41,16 +52,6 @@ export default function Header() {
             <span />
             <span />
             <span />
-          </button>
-
-          <button
-            className="cart-button"
-            type="button"
-            onClick={() => setIsCartOpen(true)}
-            aria-label={`Abrir carrito con ${totals.count} productos`}
-          >
-            <span aria-hidden="true">Bolsa</span>
-            <strong>{totals.count}</strong>
           </button>
         </div>
       </div>
