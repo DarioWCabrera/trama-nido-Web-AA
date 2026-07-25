@@ -52,8 +52,6 @@ export default function Hero() {
       <div className="craft-ribbon" aria-hidden="true">
         <span>Hecho a pedido</span>
         <i>•</i>
-        <span>Colores a elección</span>
-        <i>•</i>
         <span>Seña del 50%</span>
         <i>•</i>
         <span>7 a 10 días</span>

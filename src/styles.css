@@ -1187,17 +1187,17 @@ textarea:focus {
   .cart-button .cart-icon { display: inline-block; font-size: 1rem; }
   .cart-button strong { width: 22px; height: 22px; }
   .craft-ribbon {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.35rem 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.45rem;
     padding: 12px 14px;
-    overflow: visible;
-    white-space: normal;
-    font-size: 0.64rem;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: clamp(0.52rem, 2.5vw, 0.64rem);
     text-align: center;
   }
-  .craft-ribbon span { display: block; }
-  .craft-ribbon i { display: none; }
+  .craft-ribbon span { display: block; flex: 1; min-width: 0; }
+  .craft-ribbon i { display: inline; flex: 0 0 auto; }
   .hero-shell { padding-top: 20px; }
   .hero-meta { font-size: 0.58rem; }
   .hero-meta span:last-child { display: none; }
@@ -2211,7 +2211,6 @@ textarea:focus {
 }
 
 @media (max-width: 430px) {
-  .craft-ribbon { grid-template-columns: 1fr; }
   .admin-images-grid { grid-template-columns: 1fr; }
   .admin-size-row { grid-template-columns: 1fr; }
   .admin-size-row label:first-child { grid-column: auto; }
